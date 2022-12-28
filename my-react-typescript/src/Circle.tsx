@@ -11,14 +11,16 @@ const Container = styled.div<CircleProps>`
 
 export default function Circle(
   props: CircleProps,
-  { text = "default text" }: CircleProps
+  { text = "default text", counter = 0 }: CircleProps
 ) {
   return (
     <Container
       bgColor={props.bgColor}
-      borderColor={props.borderColor ?? props.bgColor}
+      borderColor={props.borderColor ?? "white"}
+      onClick={props.onClickCounter}
     >
       {props.text ?? text}
+      {props.counter ?? counter}
     </Container>
   );
 }
